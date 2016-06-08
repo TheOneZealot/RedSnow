@@ -1,0 +1,16 @@
+{
+	"player": {
+		"size": {"x": "16", "y": "16"},
+		"bounds": {"x": "16", "y": "16"},
+		"texture": "assets/textures/Entity_Player.png"
+	},
+	"enemy": {
+		"size": {"x": "16", "y": "16"},
+		"bounds": {"x": "16", "y": "16"},
+		"texture": "assets/textures/Entity_Enemy.png",
+		"animation": "assets/animations/Entity_Enemy.json",
+		"components": [
+			{"name": "DamageTouch", "args": {"damage": "1"}}
+		]
+	}
+}

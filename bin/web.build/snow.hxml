@@ -1,0 +1,6 @@
+--macro snow.Set.main("luxe.Engine")
+--macro snow.Set.ident("com.melsom.redsnow")
+
+--macro snow.Set.config("config.json")
+
+

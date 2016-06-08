@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="16" height="16" tilewidth="16" tileheight="16" nextobjectid="7">
+ <tileset firstgid="1" name="Tileset_Editor" tilewidth="16" tileheight="16" tilecount="1" columns="1">
+  <image source="../textures/Tileset_Editor.png" width="16" height="16"/>
+ </tileset>
+ <layer name="collision" width="16" height="16">
+  <data encoding="csv">
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+1,0,0,1,1,0,0,0,0,0,1,1,1,1,0,1,
+1,0,0,1,1,0,0,1,1,0,1,1,1,1,0,1,
+1,0,0,1,1,0,0,1,1,0,0,0,1,1,0,1,
+1,0,0,0,0,0,0,1,1,0,0,0,1,1,0,1,
+1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,
+1,1,1,1,1,0,0,1,1,0,1,1,1,1,0,1,
+1,1,1,1,1,0,0,1,1,0,1,1,1,1,0,1,
+1,0,0,0,0,0,0,1,1,0,1,1,1,1,0,1,
+1,0,0,0,0,0,0,0,0,0,1,1,1,1,0,1,
+1,1,1,1,1,1,0,1,1,0,0,0,0,0,0,1,
+1,1,1,1,1,1,0,1,1,0,1,1,1,1,0,1,
+1,0,0,0,0,0,0,1,1,0,1,1,1,1,0,1,
+1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,
+1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+</data>
+ </layer>
+ <objectgroup name="objects">
+  <object id="2" name="spawn" type="spawn" x="160" y="80" width="16" height="16">
+   <ellipse/>
+  </object>
+  <object id="4" name="enemy" type="enemy" x="32" y="224" width="16" height="16">
+   <ellipse/>
+  </object>
+  <object id="5" name="enemy" type="enemy" x="16" y="16" width="16" height="16">
+   <ellipse/>
+  </object>
+  <object id="6" name="enemy" type="enemy" x="224" y="16" width="16" height="16">
+   <ellipse/>
+  </object>
+ </objectgroup>
+</map>
