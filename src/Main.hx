@@ -37,7 +37,9 @@ class Main extends luxe.Game
             ],
             textures: [
                 {id: "assets/textures/Tileset_Editor.png"},
-                {id: "assets/textures/Tileset_Snow.png"},
+                {id: "assets/textures/Tileset_Editor_Building.png"},
+                {id: "assets/textures/Tileset_SnowDirt.png"},
+                {id: "assets/textures/Tileset_LogBuilding.png"},
                 {id: "assets/textures/Entity_Player.png"},
                 {id: "assets/textures/Entity_Enemy.png"}
             ]
@@ -84,5 +86,10 @@ class Main extends luxe.Game
         Luxe.input.bind_key("left", Key.key_a);
         Luxe.input.bind_key("down", Key.key_s);
         Luxe.input.bind_key("right", Key.key_d);
+
+        Luxe.input.bind_key("up", Key.up);
+        Luxe.input.bind_key("left", Key.left);
+        Luxe.input.bind_key("down", Key.down);
+        Luxe.input.bind_key("right", Key.right);
     }
 }

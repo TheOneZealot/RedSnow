@@ -6,6 +6,7 @@
 #endif
 
 HX_DECLARE_CLASS0(World)
+HX_DECLARE_CLASS3(luxe,importers,tiled,TiledLayer)
 HX_DECLARE_CLASS3(luxe,importers,tiled,TiledMap)
 HX_DECLARE_CLASS3(luxe,importers,tiled,TiledObject)
 HX_DECLARE_CLASS2(luxe,tilemaps,Tilemap)
@@ -38,11 +39,15 @@ class HXCPP_CLASS_ATTRIBUTES  World_obj : public hx::Object{
 		::luxe::importers::tiled::TiledMap map;
 		Dynamic creatures;
 		Array< ::Dynamic > spawns;
+		Array< ::Dynamic > building_layers;
 		virtual Void generate_collision( );
 		Dynamic generate_collision_dyn();
 
 		virtual Void generate_objects( );
 		Dynamic generate_objects_dyn();
+
+		virtual Void generate_buildings( );
+		Dynamic generate_buildings_dyn();
 
 };
 

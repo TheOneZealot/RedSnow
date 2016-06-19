@@ -4,14 +4,19 @@ import luxe.Vector;
 import luxe.components.sprite.SpriteAnimation;
 import luxe.collision.shapes.Polygon;
 import luxe.importers.tiled.TiledMap;
+import luxe.importers.tiled.TiledLayer;
+import luxe.tilemaps.Tilemap;
 import luxe.importers.tiled.TiledObjectGroup;
 import phoenix.Texture;
+
+using StringTools;
 
 class World
 {
     public var map:TiledMap;
     public var creatures:Dynamic;
     public var spawns:Array<TiledObject>;
+    public var building_layers:Array<TiledLayer>;
 
     public function new()
     {
@@ -20,9 +25,11 @@ class World
         map.display({filter: FilterType.nearest});
 
         spawns = [];
+        building_layers = [];
 
         generate_collision();
         generate_objects();
+        generate_buildings();
     }
 
     function generate_collision()
@@ -46,12 +53,36 @@ class World
             {
                 switch (object.type)
                 {
-                    case "spawn":
-                        spawns.push(object);
-                        Main.player = new Creature("player", "player", object.pos, new PlayerController());
+                    case "Spawn":
+                        switch(object.properties.get("Creature"))
+                        {
+                            case "player":
+                                spawns.push(object);
+                                Main.player = new Creature("player", "player", object.pos, new PlayerController());
+                            default:
+                                new Creature(object.properties.get("Creature"), object.name, object.pos, new DynamicController());
+                        }
+                }
+            }
+        }
+    }
 
-                    default:
-                        new Creature(object.type, object.name, object.pos, new DynamicController());
+    function generate_buildings()
+    {
+        for (layer in map.layers)
+        {
+            if (!StringTools.startsWith(layer.name, "buildings")) continue;
+
+            for (layer in building_layers)
+            {
+                var tileset:Tileset = map.tilesets.get(layer.properties.get("Tileset"));
+                var first_id:Int = tileset.first_id;
+
+                for (z in 0...2)
+                {
+                    var layer_name = "buildings"+z;
+
+                    map.add_layer({name: layer_name});
                 }
             }
         }

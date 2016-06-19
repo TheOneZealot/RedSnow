@@ -1,5 +1,6 @@
 #include <hxcpp.h>
 
+#include "cpp/Pointer.h"
 #ifndef INCLUDED_StringTools
 #include <StringTools.h>
 #endif
@@ -45,6 +46,58 @@ STATIC_HX_DEFINE_DYNAMIC_FUNC1(StringTools_obj,urlEncode,return )
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC1(StringTools_obj,urlDecode,return )
+
+bool StringTools_obj::startsWith( ::String s,::String start){
+	HX_STACK_FRAME("StringTools","startsWith",0x5f4e6efb,"StringTools.startsWith","/usr/local/lib/haxe/std/StringTools.hx",127,0x3f930611)
+	HX_STACK_ARG(s,"s")
+	HX_STACK_ARG(start,"start")
+	HX_STACK_LINE(133)
+	bool tmp = (s.length < start.length);		HX_STACK_VAR(tmp,"tmp");
+	HX_STACK_LINE(133)
+	if ((tmp)){
+		HX_STACK_LINE(134)
+		return false;
+	}
+	HX_STACK_LINE(135)
+	::cpp::Pointer< ::cpp::Char > p0 = ::cpp::Pointer< ::cpp::Char >(::cpp::Pointer_obj::fromPointer(s.__s));		HX_STACK_VAR(p0,"p0");
+	HX_STACK_LINE(136)
+	::cpp::Pointer< ::cpp::Char > p1 = ::cpp::Pointer< ::cpp::Char >(::cpp::Pointer_obj::fromPointer(start.__s));		HX_STACK_VAR(p1,"p1");
+	HX_STACK_LINE(137)
+	{
+		HX_STACK_LINE(137)
+		int _g1 = (int)0;		HX_STACK_VAR(_g1,"_g1");
+		HX_STACK_LINE(137)
+		int _g = start.length;		HX_STACK_VAR(_g,"_g");
+		HX_STACK_LINE(137)
+		while((true)){
+			HX_STACK_LINE(137)
+			bool tmp1 = (_g1 < _g);		HX_STACK_VAR(tmp1,"tmp1");
+			HX_STACK_LINE(137)
+			bool tmp2 = !(tmp1);		HX_STACK_VAR(tmp2,"tmp2");
+			HX_STACK_LINE(137)
+			if ((tmp2)){
+				HX_STACK_LINE(137)
+				break;
+			}
+			HX_STACK_LINE(137)
+			int tmp3 = (_g1)++;		HX_STACK_VAR(tmp3,"tmp3");
+			HX_STACK_LINE(137)
+			int i = tmp3;		HX_STACK_VAR(i,"i");
+			HX_STACK_LINE(138)
+			bool tmp4 = (p0->at(i) != p1->at(i));		HX_STACK_VAR(tmp4,"tmp4");
+			HX_STACK_LINE(138)
+			if ((tmp4)){
+				HX_STACK_LINE(139)
+				return false;
+			}
+		}
+	}
+	HX_STACK_LINE(140)
+	return true;
+}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC2(StringTools_obj,startsWith,return )
 
 bool StringTools_obj::isSpace( ::String s,int pos){
 	HX_STACK_FRAME("StringTools","isSpace",0xe0290778,"StringTools.isSpace","/usr/local/lib/haxe/std/StringTools.hx",183,0x3f930611)
@@ -283,6 +336,9 @@ bool StringTools_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx:
 	case 9:
 		if (HX_FIELD_EQ(inName,"urlEncode") ) { outValue = urlEncode_dyn(); return true;  }
 		if (HX_FIELD_EQ(inName,"urlDecode") ) { outValue = urlDecode_dyn(); return true;  }
+		break;
+	case 10:
+		if (HX_FIELD_EQ(inName,"startsWith") ) { outValue = startsWith_dyn(); return true;  }
 	}
 	return false;
 }
@@ -308,6 +364,7 @@ hx::Class StringTools_obj::__mClass;
 static ::String sStaticFields[] = {
 	HX_HCSTRING("urlEncode","\xe5","\x4e","\x52","\x9a"),
 	HX_HCSTRING("urlDecode","\xfd","\xb9","\x5b","\x05"),
+	HX_HCSTRING("startsWith","\x77","\xc0","\xcf","\xf9"),
 	HX_HCSTRING("isSpace","\x7c","\x30","\xec","\x1d"),
 	HX_HCSTRING("ltrim","\x4e","\x43","\x4a","\x7c"),
 	HX_HCSTRING("rtrim","\x54","\xbe","\xb1","\xf0"),

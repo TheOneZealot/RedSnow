@@ -2887,6 +2887,7 @@
    <depend name="include/Main.h"/>
    <depend name="include/PlayerController.h"/>
    <depend name="include/Simulation.h"/>
+   <depend name="include/StringTools.h"/>
    <depend name="include/World.h"/>
    <depend name="include/haxe/IMap.h"/>
    <depend name="include/haxe/ds/StringMap.h"/>
@@ -2902,6 +2903,7 @@
    <depend name="include/luxe/Visual.h"/>
    <depend name="include/luxe/collision/shapes/Polygon.h"/>
    <depend name="include/luxe/collision/shapes/Shape.h"/>
+   <depend name="include/luxe/importers/tiled/TiledLayer.h"/>
    <depend name="include/luxe/importers/tiled/TiledMap.h"/>
    <depend name="include/luxe/importers/tiled/TiledMapData.h"/>
    <depend name="include/luxe/importers/tiled/TiledObject.h"/>
@@ -2910,6 +2912,7 @@
    <depend name="include/luxe/resource/TextResource.h"/>
    <depend name="include/luxe/tilemaps/TileLayer.h"/>
    <depend name="include/luxe/tilemaps/Tilemap.h"/>
+   <depend name="include/luxe/tilemaps/Tileset.h"/>
    <depend name="include/phoenix/Rectangle.h"/>
    <depend name="include/phoenix/Vector.h"/>
    <depend name="include/snow/systems/assets/Asset.h"/>
@@ -3002,6 +3005,7 @@
    <depend name="include/phoenix/Color.h"/>
    <depend name="include/phoenix/Vector.h"/>
    <depend name="include/snow/App.h"/>
+   <depend name="include/snow/systems/input/Keycodes.h"/>
   </file>
   <file name="src/luxe/Game.cpp">
    <depend name="include/Main.h"/>
